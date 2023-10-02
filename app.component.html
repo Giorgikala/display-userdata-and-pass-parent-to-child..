@@ -1,0 +1,22 @@
+<div class="container">
+  <h3 class="text-success">Person detail</h3>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item text-primary">Student Name is:{{userProp.name}}</li>
+    <li class="list-group-item text-primary">Student Email: {{userProp.email}}</li>
+    <li class="list-group-item text-primary">Student City: {{userProp?.address?.city}}</li>
+    <li class="list-group-item text-primary">Student Suite: {{userProp?.address?.suite}}</li>
+    <li class="list-group-item text-primary">Student Status: {{userProp.status ? 'Active' : 'Inactive'}}</li>
+  </ul>
+  <button type="button" class="btn btn-warning" [class]="buttonClass" (click)="ChangeStatus()">{{userProp.status ? 'Active' : 'Inactive'}}</button>
+ <hr>
+  <app-child *ngIf="userProp.status"
+  [email]="userProp.email"
+  [name]="userProp.name"
+   >
+  
+  </app-child>
+</div>
+
+
+
+
